@@ -4,11 +4,15 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "serve": "vite",
+    "dev": "vite",
     "build": "tsc && vite build",
+    "build:github": "tsc && vite build --mode github",
+    "build:gitee": "tsc && vite build --mode gitee",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "deploy:github": "npm run build:github && gh-pages -d dist",
+    "deploy:gitee": "npm run build:gitee && echo '构建完成，请手动上传 dist 目录到 Gitee'"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -19,18 +23,6 @@
   "devDependencies": {
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
-    "@typescript-eslint/eslint-plugin": "^7.0.2",
-    "@typescript-eslint/parser": "^7.0.2",
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.56.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "gh-pages": "^6.1.1",
-    "typescript": "^5.2.2",
-    "vite": "^5.1.4"
-  }
-}
-9",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
     "@vitejs/plugin-react": "^4.2.1",
